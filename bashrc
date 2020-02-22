@@ -48,21 +48,26 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# parse git branch
-parse_git_branch () {
-  if [[ git rev-parse --git-dir >/dev/null 2>&1 ]]; then
-      git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-  else
-    return 0
-  fi
+# set git status
+get_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 
-  echo -e $git_branch
+get_git_status() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    if ! git status | grep "nothing to commit" > /dev/null 2>&1; then
+      echo " $(tput setaf 1)x "
+      return 0
+    elif $boshka; then
+      echo " $(tput setaf 2)o "
+    fi
+  fi
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(get_git_status)\[\033[01;35m\]$(get_git_branch)\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$(get_git_status)$(get_git_branch)$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -115,6 +120,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# vim mode
+# set vim mode
 set -o vi
-
