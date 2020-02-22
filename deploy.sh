@@ -3,7 +3,7 @@
 
 # opts
 set -e  # err exit
-# set -x  # cmd trace
+set -x  # cmd trace
 # vars
 HOME="$(cd ~; pwd)"
 BASH_CONF_DIR="${HOME}/.bash"
@@ -21,7 +21,7 @@ function setup_environment() {
 }
 
 function setup_bash() {
-  # setup config
+  # clear
   if [[ -d ${BASH_CONF_DIR} ]]; then
     rm -rf ${BASH_CONF_DIR}
   fi
@@ -30,13 +30,13 @@ function setup_bash() {
   fi
 
   # download config
-  git clone -b bash git@github.com/yongcongwang/dotfiles.git \
+  git clone -b bash git@github.com:yongcongwang/dotfiles.git \
       ${BASH_CONF_DIR}
   ln -s ${BASH_CONF_DIR}/bashrc ${HOME}/.bashrc
 }
 
-function setup_bash() {
-  # setup config
+function setup_vim() {
+  # clear
   if [[ -d ${VIM_CONF_DIR} ]]; then
     rm -rf ${VIM_CONF_DIR}
   fi
@@ -45,7 +45,7 @@ function setup_bash() {
   fi
 
   # download config
-  git clone -b vim git@github.com/yongcongwang/dotfiles.git \
+  git clone -b vim git@github.com:yongcongwang/dotfiles.git \
       ${VIM_CONF_DIR}
   ln -s ${VIM_CONF_DIR}/vimrc ${HOME}/.vimrc
 }
@@ -53,9 +53,7 @@ function setup_bash() {
 function setup_tmux() {
   echo "Setup tmux start"
 }
-function setup_vim() {
-  echo "Setup vim start"
-}
+
 function setup_zsh() {
   echo "Setup zsh start"
 }
