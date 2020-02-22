@@ -51,7 +51,18 @@ function setup_vim() {
 }
 
 function setup_tmux() {
-  echo "Setup tmux start"
+  # clear
+  if [[ -d ${TMUX_CONF_DIR} ]]; then
+    rm -rf ${TMUX_CONF_DIR}
+  fi
+  if [[ -f ${HOME}/.tmux.conf || -L ${HOME}/.tmux.conf ]]; then
+    rm -f ${HOME}/.tmux.conf
+  fi
+
+  # download config
+  git clone -b tmux git@github.com:yongcongwang/dotfiles.git \
+      ${TMUX_CONF_DIR}
+  ln -s ${TMUX_CONF_DIR}/tmux.conf ${HOME}/.tmux.conf
 }
 
 function main() {
