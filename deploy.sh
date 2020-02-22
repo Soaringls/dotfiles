@@ -123,6 +123,12 @@ function main() {
     zsh)
       setup_zsh
       ;;
+    all)
+      setup_bash
+      setup_tmux
+      setup_vim
+      setup_zsh
+      ;;
     *)
       echo "ERROR: Unknown paramemter: $1"
       ;;
