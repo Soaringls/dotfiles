@@ -4,17 +4,79 @@
 # opts
 set -e  # err exit
 # set -x  # cmd trace
-
 # vars
 HOME="$(cd ~; pwd)"
+BASH_CONF_DIR="${HOME}/.bash"
 VIM_CONF_DIR="${HOME}/.vim"
 ZSH_CONF_DIR="${HOME}/.zsh"
 TMUX_CONF_DIR="${HOME}/.tmux"
+COMMAND=$1
 
 # functions 
 function setup_environment() {
-  sudo apt install curl
+  (type curl &> /dev/null)
+  if [[ $? = 1 ]]; then
+    sudo apt install curl
+  fi
 }
+
+function setup_bash() {
+  # setup config
+  if [[ -d ${BASH_CONF_DIR} ]]; then
+    rm -rf ${BASH_CONF_DIR}
+  fi
+  if [[ -f ${HOME}/.bashrc || -L ${HOME}/.bashrc ]]; then
+    rm -f ${HOME}/.bashrc
+  fi
+
+  # download config
+  git clone -b bash https://github.com/yongcongwang/dotfiles.git \
+      ${BASH_CONF_DIR}
+  ln -s ${BASH_CONF_DIR}/bashrc ${HOME}/.bashrc
+}
+function setup_tmux() {
+  echo "Setup tmux start"
+}
+function setup_vim() {
+  echo "Setup vim start"
+}
+function setup_zsh() {
+  echo "Setup zsh start"
+}
+
+function main() {
+  setup_environment
+
+  case ${COMMAND} in
+    bash)
+      setup_bash
+      ;;
+    tmux)
+      setup_tmux
+      ;;
+    vim)
+      setup_vim
+      ;;
+    zsh)
+      setup_zsh
+      ;;
+    all)
+      setup_bash
+      setup_tmux
+      setup_vim
+      setup_zsh
+      ;;
+    *)
+      echo "ERROR: Unknown paramemter: ${COMMAND}"
+      exit 0
+      ;;
+  esac
+
+  echo "Successfully setup ${COMMAND}, enjoy!"
+}
+
+# start
+main
 
 # function setup_vim() {
 #   # install
@@ -93,49 +155,3 @@ function setup_environment() {
 #   ln -s ${TMUX_CONF_DIR}/tmux.conf ${HOME}/.tmux.conf
 #   git clone https://github.com/tmux-plugins/tpm ${TMUX_CONF_DIR}/plugins/tpm
 # }
-
-function setup_bash() {
-  echo "Setup bash start"
-}
-function setup_tmux() {
-  echo "Setup tmux start"
-}
-function setup_vim() {
-  echo "Setup vim start"
-}
-function setup_zsh() {
-  echo "Setup zsh start"
-}
-
-function main() {
-  setup_environment
-
-  case $1 in
-    bash)
-      setup_bash
-      ;;
-    tmux)
-      setup_tmux
-      ;;
-    vim)
-      setup_vim
-      ;;
-    zsh)
-      setup_zsh
-      ;;
-    all)
-      setup_bash
-      setup_tmux
-      setup_vim
-      setup_zsh
-      ;;
-    *)
-      echo "ERROR: Unknown paramemter: $1"
-      ;;
-  esac
-
-  echo "Successfully setup $1, enjoy!"
-}
-
-# start
-main
