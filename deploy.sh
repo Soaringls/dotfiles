@@ -30,7 +30,7 @@ function setup_bash() {
   fi
 
   # download config
-  git clone -b bash https://github.com/yongcongwang/dotfiles.git \
+  git clone -b bash git@github.com/yongcongwang/dotfiles.git \
       ${BASH_CONF_DIR}
   ln -s ${BASH_CONF_DIR}/bashrc ${HOME}/.bashrc
 }
