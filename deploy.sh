@@ -34,6 +34,22 @@ function setup_bash() {
       ${BASH_CONF_DIR}
   ln -s ${BASH_CONF_DIR}/bashrc ${HOME}/.bashrc
 }
+
+function setup_bash() {
+  # setup config
+  if [[ -d ${VIM_CONF_DIR} ]]; then
+    rm -rf ${VIM_CONF_DIR}
+  fi
+  if [[ -f ${HOME}/.vimrc || -L ${HOME}/.vimrc ]]; then
+    rm -f ${HOME}/.vimrc
+  fi
+
+  # download config
+  git clone -b vim git@github.com/yongcongwang/dotfiles.git \
+      ${VIM_CONF_DIR}
+  ln -s ${VIM_CONF_DIR}/vimrc ${HOME}/.vimrc
+}
+
 function setup_tmux() {
   echo "Setup tmux start"
 }
