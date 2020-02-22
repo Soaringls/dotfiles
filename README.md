@@ -1,5 +1,7 @@
 # Dotfiles
-The repo stores software configures in linux.
+This repo stores my software configures in Linux.
+
+To deploy the following commands, make sure you can access github repos via ssh.
 
 ## bash
 
