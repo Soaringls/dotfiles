@@ -93,3 +93,5 @@ set expandtab " replace tab by space
 set nofoldenable " no fold code
 
 set hlsearch " highlight search
+
+set backspace=indent,eol,start " set backspace behave
