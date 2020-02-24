@@ -3,32 +3,28 @@ This repo stores my software configures in Linux.
 
 To deploy the following commands, make sure you can access github repos via ssh.
 
-## bash
-
-### Deploy
+## Bash
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) bash
 ```
 
-### [Features](https://github.com/yongcongwang/dotfiles/tree/bash)
+- [Features](https://github.com/yongcongwang/dotfiles/tree/bash)
 
-## vim
+## Vim
 
-### Deploy
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) vim
 ```
-### [Features](https://github.com/yongcongwang/dotfiles/tree/vim)
+- [Features](https://github.com/yongcongwang/dotfiles/tree/vim)
 
-## tmux
+## Tmux
 
-### Deploy
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) tmux
 ```
-### [Features](https://github.com/yongcongwang/dotfiles/tree/tmux)
+- [Features](https://github.com/yongcongwang/dotfiles/tree/tmux)
 
-## all
+## All
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) all
 ```
