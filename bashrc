@@ -122,3 +122,4 @@ fi
 
 # set vim mode
 set -o vi
+export EDITOR=/usr/bin/vim
