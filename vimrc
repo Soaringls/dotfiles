@@ -4,7 +4,7 @@
 "   => Colors
 "   => Text
 "   => Functions
-"   => Extend File
+"   => Format files
 
 " => General 
 set history=500 " count of history lines
@@ -156,19 +156,15 @@ endfunction
 
 autocmd BufNewFile *.vim call AddTemplate_vim()
 
-" => Extend File
+" => Format files
+" --> settings
 let g:cpp_class_scope_highlight = 1
 
 let g:cpp_member_variable_highlight = 1
 
 let g:cpp_class_decl_highlight = 1
 
-let g:cpp_posix_standard = 1
+let g:cpp_function_highlight = 1
 
-" let g:cpp_experimental_simple_template_highlight = 1
+" --> applications
 
-" let g:cpp_experimental_template_highlight = 1
-
-let g:cpp_concepts_highlight = 1
-
-" let g:cpp_no_function_highlight = 1
