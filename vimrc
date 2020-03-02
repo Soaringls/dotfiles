@@ -98,6 +98,10 @@ set tw=80
 set nu! " show line num
 
 set nofoldenable " no fold code
+set laststatus=2
+set statusline=%F
+set statusline+=%=
+set statusline+=%{getcwd()}
 
 " => Functions
 " cpp header

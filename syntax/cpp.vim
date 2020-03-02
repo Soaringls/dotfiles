@@ -46,7 +46,7 @@ endif
 syntax keyword cppSTLconstant nullptr
 
 " containers (array, vector, list, *map, *set, ...)
-syntax keyword cppSTLtype array vector list, *map, *set
+syntax keyword cppSTLtype array vector list *map *set string
 
 syntax keyword cppSTLfunction cbegin cend
 syntax keyword cppSTLfunction crbegin crend
