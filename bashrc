@@ -65,7 +65,7 @@ get_git_status() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\u\]@\[\h\]\[\033[00m\]:\[\033[01;34m\]\[\w\]\[\033[00m\]\[$(get_git_status)\]\[\033[01;35m\]$(get_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[$(get_git_status)\]\[\033[01;35m\]$(get_git_branch)\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$(get_git_status)$(get_git_branch)$ '
 fi
