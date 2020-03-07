@@ -50,22 +50,22 @@ fi
 
 # set git status
 get_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
 get_git_status() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     if ! git status | grep "nothing to commit" > /dev/null 2>&1; then
-      echo " $(tput setaf 1)x "
+      echo "$(tput setaf 1)$(tput bold)"
       return 0
     elif $boshka; then
-      echo " $(tput setaf 2)o "
+      echo "$(tput setaf 2)$(tput bold)"
     fi
   fi
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[$(get_git_status)\]\[\033[01;35m\]$(get_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[$(get_git_status)\]$(get_git_branch)\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$(get_git_status)$(get_git_branch)$ '
 fi
