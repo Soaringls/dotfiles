@@ -1,13 +1,13 @@
 " By yongcong.wang @ 2019-12-05
 " Contents:
 "   => General
-"   => Colors
+"   => Color
 "   => Text
 "   => Functions
 "   => Format files
 
 " => General 
-set history=500 " count of history lines
+set history=5000 " count of history lines
 
 filetype plugin on " enable filetype plugins
 filetype indent on
@@ -41,6 +41,22 @@ set tm=500
 set nobackup " no backup
 set nowb
 set swapfile
+
+" finding files
+set path+=** " search into subfolders & provide tab-completion
+set wildmenu " display all matching files when tab complete
+
+" tag jump
+command! MakeTags !ctags -R .
+
+" file browsing
+let g:netrw_banner=0 " disable banner
+" let g:netrw_browse_split=4 " open in prior window
+" let g:netrw_altv=1 " open split to the right
+let g:netrw_liststyle=3 " tree view
+" let g:netrw_winsize=25 " 25% of current window
+let g:netrw_list_hide=netrw_gitignore#Hide() " ignore files in gitignore
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' " hide some folder
 
 " => Color
 
@@ -92,8 +108,8 @@ set ai " auto indent
 set si " smart indent
 set wrap " wrap lines
 
-set lbr " line break on 80 chars
-set tw=80
+" set lbr " line break on 80 chars
+" set tw=80
 
 set nu! " show line num
 
