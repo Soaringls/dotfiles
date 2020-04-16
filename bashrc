@@ -18,6 +18,9 @@ shopt -s histappend
 HISTSIZE=100000
 HISTFILESIZE=200000
 
+# share commands in different terminal
+export PROMPT_COMMAND="history -a; history -r"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
