@@ -133,5 +133,5 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # set vim mode
-set -o vi
-export EDITOR=/usr/bin/vim
+# set -o vi
+export EDITOR=vim
