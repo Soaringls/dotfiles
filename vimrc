@@ -43,7 +43,7 @@ set nowb
 set swapfile
 
 " finding files
-set path+=** " search into subfolders & provide tab-completion
+"set path+=** " search into subfolders & provide tab-completion
 set wildmenu " display all matching files when tab complete
 
 " tag jump
