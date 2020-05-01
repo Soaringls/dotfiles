@@ -48,6 +48,10 @@ set wildmenu " display all matching files when tab complete
 
 " tag jump
 command! MakeTags !ctags -R .
+set tags=./tags,**5/tags,tags;~
+"                          ^ in working dir, or parents until home
+"                   ^ in any subfolder of working dir, depth is 5
+"           ^ sibling of open file
 
 " file browsing
 let g:netrw_banner=0 " disable banner
