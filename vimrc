@@ -77,7 +77,7 @@ set colorcolumn=81 " color at 81
 
 set ambiwidth=double " support chinese
 
-set mouse=a " use mouse
+set mouse=n " use mouse in normal mode, a for all mode
 
 set noundofile " no undo file
 
