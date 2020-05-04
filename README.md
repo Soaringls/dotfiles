@@ -1,11 +1,11 @@
 # Dotfiles
 This repo stores my software configures in Linux.
 
-To deploy the following commands, make sure you can access github repos via ssh.
+To deploy the following commands, make sure `wget` is installed.
 
 ## Bash
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) bash
+bash <(wget -qO- https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) bash
 ```
 
 - [Features](https://github.com/yongcongwang/dotfiles/tree/bash)
@@ -13,18 +13,18 @@ bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/de
 ## Vim
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) vim
+bash <(wget -qO- https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) vim
 ```
 - [Features](https://github.com/yongcongwang/dotfiles/tree/vim)
 
 ## Tmux
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) tmux
+bash <(wget -qO-https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) tmux
 ```
 - [Features](https://github.com/yongcongwang/dotfiles/tree/tmux)
 
 ## All
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) all
+bash <(wget -qO- https://raw.githubusercontent.com/yongcongwang/dotfiles/master/deploy.sh) all
 ```
