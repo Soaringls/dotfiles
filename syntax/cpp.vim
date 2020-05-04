@@ -1,45 +1,20 @@
 " By yongcong.wang @ 27/02/2020
-if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
-    syn match   cCustomScope    "::"
-    syn match   cCustomClass    "\w\+\s*::" contains=cCustomScope
-    hi def link cCustomClass Function
-endif
 
-if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
-    syn match   cCustomDot    "\." contained
-    syn match   cCustomPtr    "->" contained
-    syn match   cCustomMemVar "\(\.\|->\)\h\w*" contains=cCustomDot,cCustomPtr
-    hi def link cCustomMemVar Function
-endif
+" highlight scope
+syntax match cppScope "::"
+syntax match cppScopeAll "\w\+\s*::" contains=cppScope
+highlight def link cppScopeAll Constant
 
-if exists('g:cpp_class_decl_highlight') && g:cpp_class_decl_highlight
-	syn match cCustomClassKey "\<class\>"
-	hi def link cCustomClassKey cppStructure
+" highlight methods after . and ->
+syntax match cppDot "\."
+syntax match cppPointer "->"
+syntax match cppMethod "\(\.\|->\)\h\w*" contains=cppDot,cppPointer
+highlight def link cppMethod Function
 
-	" Clear cppAccess entirely and redefine as matches
-"	syn clear cppAccess
-	syn match cCustomAccessKey "\<private\>"
-	syn match cCustomAccessKey "\<public\>"
-	syn match cCustomAccessKey "\<protected\>"
-	hi def link cCustomAccessKey cppAccess
-
-	" Match the parts of a class declaration
-	syn match cCustomClassName "\<class\_s\+\w\+\>"
-				\ contains=cCustomClassKey
-	syn match cCustomClassName "\<private\_s\+\w\+\>"
-				\ contains=cCustomAccessKey
-	syn match cCustomClassName "\<public\_s\+\w\+\>"
-				\ contains=cCustomAccessKey
-	syn match cCustomClassName "\<protected\_s\+\w\+\>"
-				\ contains=cCustomAccessKey
-	hi def link cCustomClassName Function
-endif
-
-if exists('g:cpp_function_highlight') && g:cpp_function_highlight
-    syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
-    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
-    hi def link cCustomFunc  Function
-endif
+" hightlight functions 
+syntax match cppParen "("
+syntax match cppParenFunction "\w\+\s*(\@=" contains=cppParen
+highlight def link cppParenFunction Function
 
 " std
 
