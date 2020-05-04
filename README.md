@@ -1,7 +1,7 @@
 # Dotfiles
 This repo stores my software configures in Linux.
 
-To deploy the following commands, make sure `wget` is installed.
+Make sure `wget` is installed.
 
 ## Bash
 ```bash
