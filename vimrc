@@ -70,7 +70,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert " colorscheme
+    colorscheme=pablo " colorscheme
 catch
 endtry
 
@@ -96,6 +96,7 @@ endif
 
 highlight LineNr ctermbg=black " line num background color
 highlight ColorColumn ctermbg=0 guibg=lightgrey " 81 char color
+
 " => Text
 set encoding=utf8 " encode
 
