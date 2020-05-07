@@ -69,10 +69,7 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme=pablo " colorscheme
-catch
-endtry
+colorscheme pablo " colorscheme
 
 set background=dark 
 
@@ -115,7 +112,7 @@ set wrap " wrap lines
 " set lbr " line break on 80 chars
 " set tw=80
 
-set nu! " show line num
+set nu " show line num
 
 set nofoldenable " no fold code
 set laststatus=2
