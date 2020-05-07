@@ -56,10 +56,10 @@ set tags=./tags,**5/tags,tags;~
 " let g:netrw_banner=0 " disable banner
 " let g:netrw_browse_split=4 " open in prior window
 " let g:netrw_altv=1 " open split to the right
-let g:netrw_liststyle=3 " tree view
+" let g:netrw_liststyle=3 " tree view
 " let g:netrw_winsize=25 " 25% of current window
-let g:netrw_list_hide=netrw_gitignore#Hide() " ignore files in gitignore
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' " hide some folder
+" let g:netrw_list_hide=netrw_gitignore#Hide() " ignore files in gitignore
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' " hide some folder
 
 " => Color
 
@@ -80,7 +80,7 @@ set colorcolumn=81 " color at 81
 
 set ambiwidth=double " support chinese
 
-set mouse=n " use mouse in normal mode, a for all mode
+set mouse=a " use mouse in normal mode, a for all mode
 
 set noundofile " no undo file
 
