@@ -19,7 +19,7 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 # share commands in different terminal
-export PROMPT_COMMAND="history -a; history -r"
+export PROMPT_COMMAND="history -a;"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
