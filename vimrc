@@ -43,7 +43,7 @@ set swapfile
 
 " finding files
 "set path+=** " search into subfolders & provide tab-completion
-set wildmenu " display all matching files when tab complete
+"set wildmenu " display all matching files when tab complete
 
 " tag jump
 command! MakeTags !ctags -R .
@@ -119,6 +119,11 @@ set laststatus=2
 set statusline=%F
 set statusline+=%=
 set statusline+=%{getcwd()}
+
+" highlight files
+au BufRead,BufNewFile *.launch set filetype=xml
+au BufRead,BufNewFile *.dag set filetype=python
+au BufRead,BufNewFile *.pb.txt set filetype=proto
 
 " => Functions
 " cpp header
