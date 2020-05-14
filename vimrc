@@ -181,3 +181,13 @@ function AddTemplate_vim()
 endfunction
 
 autocmd BufNewFile *.vim call AddTemplate_vim()
+
+" cpp function coments
+nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+
+let cpp_function = "  /**\n"
+                 \."  * @brief \n"
+                 \."  * @param \n"
+                 \."  * @return \n"
+                 \."  */\n"
+command! InsertCppFunction put! = cpp_function

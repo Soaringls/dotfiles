@@ -22,6 +22,7 @@ syntax keyword cppSTLconstant nullptr
 
 " containers (array, vector, list, *map, *set, ...)
 syntax keyword cppSTLtype array vector list *map *set string stack queue
+syntax keyword cppSTLtype unordered_set
 
 syntax keyword cppSTLfunction cbegin cend
 syntax keyword cppSTLfunction crbegin crend
