@@ -125,6 +125,10 @@ au BufRead,BufNewFile *.launch set filetype=xml
 au BufRead,BufNewFile *.dag set filetype=python
 au BufRead,BufNewFile *.pb.txt set filetype=proto
 
+" zoom
+set foldmethod=indent " use fold indent
+let g:markdown_folding=1 " markdown zoom
+
 " => Functions
 " cpp header
 function AddTemplate_cpp()
