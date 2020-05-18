@@ -114,11 +114,11 @@ set wrap " wrap lines
 
 set nu " show line num
 
-set nofoldenable " no fold code
+set foldenable " no fold code
 set laststatus=2
 set statusline=%F
 set statusline+=%=
-set statusline+=%{getcwd()}
+set foldlevel=9999
 
 " highlight files
 au BufRead,BufNewFile *.launch set filetype=xml
