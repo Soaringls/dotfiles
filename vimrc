@@ -59,7 +59,7 @@ set tags=./tags,**5/tags,tags;~
 " let g:netrw_liststyle=3 " tree view
 " let g:netrw_winsize=25 " 25% of current window
 " let g:netrw_list_hide=netrw_gitignore#Hide() " ignore files in gitignore
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' " hide some folder
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' " hide some folder
 
 " => Color
 
