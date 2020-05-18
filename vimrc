@@ -77,7 +77,7 @@ set colorcolumn=81 " color at 81
 
 set ambiwidth=double " support chinese
 
-set mouse=a " use mouse in normal mode, a for all mode
+set mouse=a " use mouse in all mode, a for all mode
 
 set noundofile " no undo file
 
@@ -170,7 +170,7 @@ autocmd BufNewFile *.yaml call AddTemplate_yaml()
 " cmakelists header
 function AddTemplate_camkelists()
 	let infor = "# By yongcong.wang @ ".strftime("%d/%m/%Y")."\n"
-            \."cmake_minimum_required(VERSION 2.8)\n"
+            \."cmake_minimum_required(VERSION 3.10)\n"
             \."project(todo)\n\n"
             \."set(CMAKE_CXX_STANDARD 11)\n"
 	silent put! = infor
