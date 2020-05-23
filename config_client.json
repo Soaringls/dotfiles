@@ -1,0 +1,54 @@
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "debug"
+  },
+  "inbound": {
+    "port": 1080,
+    "listen": "127.0.0.1",
+    "protocol": "socks",
+    "settings": {
+      "auth": "noauth"
+    }
+  },
+  "outbounds":[
+    //{
+    //  "protocol": "shadowsocks",
+    //  "settings": {
+    //    "servers": [
+    //      {
+    //        "address": "TODO",
+    //        "method": "aes-256-cfb",
+    //        "ota": false,
+    //        "password": "TODO",
+    //        "port": 443
+    //      }
+    //    ]
+    //  }
+    //},
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "TODO",
+            "port": 1234,
+            "users": [
+              {
+                "id": "TODO",
+                "alterId": 10
+              },
+              {
+                "id": "TODO",
+                "level": 1,
+                "security": "aes-128-gcm",
+                "alterId": 12
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
