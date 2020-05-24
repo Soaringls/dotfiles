@@ -5,35 +5,18 @@
     "loglevel": "warning"
   },
   "inbounds": [
-  //{
-  //    "port": 443,
-  //    "protocol": "shadowsocks",
-  //    "settings": {
-  //      "method": "aes-256-cfb",
-  //      "password": "TODO",
-  //      "level": 0,
-  //      "ota": false,
-  //      "network": "tcp"
-  //    }
-  //},
-  {
-    "port": 1234,
-    "protocol": "vmess",
-    "settings": {
-      "clients": [
-        {
-          "id": "TODO",
-          "alterId": 10
-        },
-        {
-          "id": "TODO",
-          "level": 1,
-          "security": "aes-128-gcm",
-          "alterId": 12
-        }
-      ]
+    {
+      "port": 1234,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "TODO",
+            "alterId": 64
+          }
+        ]
+      }
     }
-  }
   ],
   "outbound": {
     "protocol": "freedom",
